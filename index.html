@@ -24,15 +24,28 @@
                     <li class="home"><a href="index.html" aria-label="Página inicial"><i class="fa-solid fa-house" aria-hidden="true"></i></a></li>
                     <li><a href="#quem-somos">Quem Somos</a></li>
                     <li><a href="#contactos">Contactos</a></li>
-                    <li><a href="#receitas">Receitas</a></li>
+                    <li class="has-submenu">
+                        <a href="#receitas" tabindex="0">Receitas</a>
+                        <ul class="submenu" aria-label="Submenu Receitas">
+                            <li><a href="#doces">Doces</a></li>
+                            <li><a href="#salgados">Salgados</a></li>
+                            <li><a href="#saudaveis">Saudáveis</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
+        <div class="image-slider">
+            <img src="img/slider1.jpg" alt="Receita 1" class="slider-img active">
+            <img src="img/slider2.jpg" alt="Receita 2" class="slider-img">
+            <img src="img/slider3.jpg" alt="Receita 3" class="slider-img">
+        </div>
     <main>
         <p>This is a simple HTML page to demonstrate the structure of an HTML document.</p>
     </main>
     <footer>
         <p>&copy; 2025 MyReceitasList</p>
+        <div id="datetime" style="margin-top:8px; font-size:1rem; color:#444;"></div>
     </footer>
     <script src="script.js"></script>
 </body>

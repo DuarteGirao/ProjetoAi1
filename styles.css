@@ -178,15 +178,104 @@ html, body {
     font-weight: 600;
     padding: 8px 10px;
     border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
 }
 .navbar a:hover,
 .navbar a:focus {
-    color: #222;
-    background: rgba(0,0,0,0.04);
+    color: #fff;
+    background: #C04E01;
     text-decoration: none;
 }
 .navbar .fa-house {
     color: #222;
+}
+
+.image-slider {
+    width: 100%;
+    max-width: 700px;
+    margin: 24px auto 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--background);
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.7s;
+    z-index: 0;
+    pointer-events: none;
+}
+.slider-img.active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.has-submenu {
+    position: relative;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    background: var(--cream);
+    min-width: 160px;
+    max-width: 240px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+    border-radius: var(--radius);
+    padding: 0;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scaleY(0.98);
+}
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scaleY(1);
+}
+.submenu li {
+    width: 100%;
+    display: block;
+}
+.submenu a {
+    display: block;
+    padding: 8px 20px;
+    word-break: break-word;
+    color: #222;
+    background: none;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.25s, color 0.25s, transform 0.25s;
+    font-weight: 600;
+    transform: translateX(-10px);
+    opacity: 0.85;
+}
+.submenu a:hover,
+    .submenu a:focus {
+    background: linear-gradient(90deg, #C04E01 0%, #e05a10 100%);
+    color: #fff;
+    transform: translateX(0);
+    opacity: 1;
 }
 
 @media (max-width: 600px) {
