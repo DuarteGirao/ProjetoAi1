@@ -43,9 +43,35 @@
     <main>
         <p>This is a simple HTML page to demonstrate the structure of an HTML document.</p>
     </main>
-    <footer>
-        <p>&copy; 2025 MyReceitasList</p>
-        <div id="datetime" style="margin-top:8px; font-size:1rem; color:#444;"></div>
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-col about">
+                <h3 class="footer-title">MyRecipeList</h3>
+                <p class="footer-desc">Receitas bem explicadas, ingredientes simples e dicas para cozinhar com confiança. Partilhe, descubra e experimente novos sabores.</p>
+            </div>
+            <div class="footer-col links">
+                <h4 class="footer-title">Links Rápidos</h4>
+                <ul>
+                    <li><a href="#quem-somos">Quem Somos</a></li>
+                    <li><a href="#receitas">Receitas</a></li>
+                    <li><a href="#contactos">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact">
+                <h4 class="footer-title">Contacte-nos</h4>
+                <p>email: <a href="mailto:info@myrecipelist.pt">info@myrecipelist.pt</a></p>
+                <p>telefone: <a href="tel:+351900000000">+351 900 000 000</a></p>
+                <div class="social">
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025 MyRecipeList — Todos os direitos reservados</div>
+            <div id="datetime" class="footer-datetime" aria-live="polite"></div>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
