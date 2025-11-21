@@ -204,6 +204,9 @@ html, body {
 @media (max-width: 900px) {
     .recipes-grid { grid-template-columns: repeat(2,1fr); }
     .categories-grid { grid-template-columns: repeat(2,1fr); }
+    /* Ensure hamburger toggle is visible for tablet/mobile breakpoints up to 900px */
+    .nav-toggle { display: block !important; }
+    .hamburger, .hamburger::before, .hamburger::after { background: var(--muted) !important; }
 }
 
 /* Safety: ensure mobile nav hidden unless open */
@@ -265,4 +268,82 @@ html, body {
     .site-footer .footer-top { grid-template-columns: 1fr; }
     .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
+
+/* Extra authoritative fix for mid-tablet widths (700px - 900px)
+   Ensures the hamburger toggle is visible and positioned to the right. */
+@media (min-width: 700px) and (max-width: 900px) {
+    .navbar .container { justify-content: space-between !important; }
+    .nav-toggle { display: block !important; order: 2 !important; margin-left: auto !important; z-index: 2200 !important; visibility: visible !important; opacity: 1 !important; }
+    .hamburger, .hamburger::before, .hamburger::after { background: var(--muted) !important; }
+}
+
+/* Very-high-specificity safety block: force hamburger visible, positioned and on top
+   If the button still doesn't appear at ~798px, this will ensure it's visible and clickable. */
+@media (min-width: 700px) and (max-width: 900px) {
+    nav.main-nav.navbar { position: relative !important; }
+    nav.main-nav.navbar > .container > .nav-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        right: 16px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 44px !important;
+        height: 44px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        background: transparent !important;
+        border: none !important;
+    }
+    /* Ensure the hamburger bars are visible against the header background */
+    nav.main-nav.navbar > .container > .nav-toggle .hamburger,
+    nav.main-nav.navbar > .container > .nav-toggle .hamburger::before,
+    nav.main-nav.navbar > .container > .nav-toggle .hamburger::after {
+        background: var(--muted) !important;
+    }
+}
+
+/* Force hamburger visible & usable between 300px and 900px
+   This covers the user's requested range (900px down to 300px) and
+   ensures the menu stays hidden unless opened. */
+@media (min-width: 300px) and (max-width: 900px) {
+    nav.main-nav.navbar { position: relative !important; }
+    /* Make navbar height and alignment consistent with mobile (<=600px) */
+    nav.main-nav.navbar { min-height: 56px !important; padding: 10px 12px !important; }
+    nav.main-nav.navbar .container { align-items: center !important; justify-content: space-between !important; }
+    nav.main-nav.navbar > .container > .nav-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        right: 12px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 44px !important;
+        height: 44px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    /* Hide the primary menu list unless .open is present */
+    nav.main-nav.navbar > .container > ul { display: none !important; }
+    .main-nav.open > .container > ul,
+    nav.main-nav.open > .container > ul,
+    .main-nav.open ul { display: flex !important; flex-direction: column !important; width: 100% !important; }
+
+    /* Make sure hamburger bars are visible */
+    nav.main-nav.navbar > .container > .nav-toggle .hamburger,
+    nav.main-nav.navbar > .container > .nav-toggle .hamburger::before,
+    nav.main-nav.navbar > .container > .nav-toggle .hamburger::after {
+        background: var(--muted) !important;
+    }
+}
+
 

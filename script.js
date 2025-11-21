@@ -15,10 +15,24 @@ document.addEventListener('DOMContentLoaded', function () {
 	const menu = document.getElementById('primary-menu');
 
 	// Garantir que o menu começa fechado em dispositivos móveis
-	if (mainNav && window.innerWidth <= 600) {
+	// Close the menu when the layout uses the mobile/tablet collapsed navbar
+	if (mainNav && window.innerWidth <= 900) {
 		mainNav.classList.remove('open');
 		if (toggle) toggle.setAttribute('aria-expanded', 'false');
 	}
+
+	// Keep state consistent when resizing across the collapse breakpoint
+	window.addEventListener('resize', function () {
+		if (!mainNav || !toggle) return;
+		if (window.innerWidth <= 900) {
+			mainNav.classList.remove('open');
+			toggle.setAttribute('aria-expanded', 'false');
+		} else {
+			// on larger screens, ensure menu is visible and aria reflects expanded
+			mainNav.classList.remove('open');
+			toggle.setAttribute('aria-expanded', 'true');
+		}
+	});
 
 	// Strict minimal behavior: start closed and toggle only when clicking the hamburger.
 	if (toggle && mainNav && menu) {
