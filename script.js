@@ -45,6 +45,22 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+	// Close mobile menu when a submenu link is clicked
+	(function closeOnSubmenuClick() {
+		if (!menu || !toggle || !mainNav) return;
+		const submenuLinks = menu.querySelectorAll('.submenu a');
+		if (!submenuLinks.length) return;
+		submenuLinks.forEach(function (link) {
+			link.addEventListener('click', function () {
+				// only close if the menu is currently open (mobile/tablet)
+				if (mainNav.classList.contains('open')) {
+					mainNav.classList.remove('open');
+					toggle.setAttribute('aria-expanded', 'false');
+				}
+			});
+		});
+	})();
+
 	// Prefer hover for submenu on desktop: prevent parent link navigation on non-touch large viewports
 	(function enableHoverSubmenu() {
 		const parentLinks = document.querySelectorAll('.has-submenu > a');
