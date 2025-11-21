@@ -68,14 +68,15 @@ body {
     color: var(--cream);
 }
 
-/* ensure the site title link inherits the banner title color and has no underline */
 .site-title a {
     color: inherit;
     text-decoration: none;
 }
+
 .site-title a:visited {
     color: inherit;
 }
+
 .site-title a:focus {
     outline: 2px solid var(--primary);
     outline-offset: 3px;
@@ -129,10 +130,12 @@ body {
     border-radius: 6px;
     transition: background 0.18s ease, color 0.18s ease;
 }
+
 .navbar .container ul li {
     display: inline-flex;
     align-items: center;
 }
+
 .navbar a {
     display: inline-flex;
     align-items: center;
@@ -150,7 +153,6 @@ body {
     color: var(--text);
 }
 
-/* Nav toggle / hamburger */
 .nav-toggle {
     display: none;
     background: transparent;
@@ -186,7 +188,6 @@ body {
     bottom: -7px;
 }
 
-/* Submenu */
 .has-submenu {
     position: relative;
 }
@@ -205,7 +206,7 @@ body {
     padding: 0;
     z-index: 10;
     flex-direction: column;
-    gap: 0; /* items closer together */
+    gap: 0;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
@@ -229,7 +230,7 @@ body {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 2px 10px; /* tighter vertical padding */
+    padding: 2px 10px;
     color: var(--text);
     background: none;
     text-decoration: none;
@@ -239,7 +240,7 @@ body {
     line-height: 1.0;
     font-size: 0.92rem;
     position: relative;
-    z-index: 3; /* ensure text sits above the hover pseudo-element */
+    z-index: 3;
 }
 
 .submenu a:hover,
@@ -247,7 +248,6 @@ body {
     color: #fff;
 }
 
-/* expand visual hover area without changing layout spacing */
 .submenu a::before {
     content: "";
     position: absolute;
@@ -258,9 +258,10 @@ body {
     background: transparent;
     border-radius: 6px;
     z-index: -1;
-    pointer-events: none; /* allow clicks/hover to reach the link */
+    pointer-events: none;
     transition: background 0.12s;
 }
+
 .submenu a:hover::before,
 .submenu a:focus::before {
     background: linear-gradient(90deg, var(--primary) 0%, var(--primary-mid) 100%);
@@ -273,9 +274,6 @@ body {
     margin-left: 4px;
 }
 
-/* -----------------------------
-   Slider
-   ----------------------------- */
 .image-slider {
     width: 100%;
     max-width: none;
@@ -309,9 +307,6 @@ body {
     pointer-events: auto;
 }
 
-/* -----------------------------
-   Sections / Components
-   ----------------------------- */
 .section-title {
     font-weight: 700;
     margin: 0 0 var(--space-lg) 0;
@@ -441,9 +436,6 @@ body {
     font-size: 1rem;
 }
 
-/* -----------------------------
-   Footer
-   ----------------------------- */
 .site-footer {
     background: linear-gradient(180deg, rgba(59, 47, 47, 0.03), rgba(0, 0, 0, 0.02));
     color: var(--muted);
@@ -523,9 +515,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* -----------------------------
-   Responsive (mobile-first adjustments)
-   ----------------------------- */
 @media (max-width: 600px) {
     .banner .container {
         flex-direction: column;

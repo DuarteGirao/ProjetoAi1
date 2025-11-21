@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-	// Footer date/time (unchanged)
 	function updateDateTime() {
 		const now = new Date();
 		const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
@@ -14,27 +13,22 @@ document.addEventListener('DOMContentLoaded', function () {
 	const mainNav = document.querySelector('.main-nav');
 	const menu = document.getElementById('primary-menu');
 
-	// Garantir que o menu começa fechado em dispositivos móveis
-	// Close the menu when the layout uses the mobile/tablet collapsed navbar
 	if (mainNav && window.innerWidth <= 900) {
 		mainNav.classList.remove('open');
 		if (toggle) toggle.setAttribute('aria-expanded', 'false');
 	}
 
-	// Keep state consistent when resizing across the collapse breakpoint
 	window.addEventListener('resize', function () {
 		if (!mainNav || !toggle) return;
 		if (window.innerWidth <= 900) {
 			mainNav.classList.remove('open');
 			toggle.setAttribute('aria-expanded', 'false');
 		} else {
-			// on larger screens, ensure menu is visible and aria reflects expanded
 			mainNav.classList.remove('open');
 			toggle.setAttribute('aria-expanded', 'true');
 		}
 	});
 
-	// Strict minimal behavior: start closed and toggle only when clicking the hamburger.
 	if (toggle && mainNav && menu) {
 		toggle.setAttribute('aria-expanded', 'false');
 		toggle.addEventListener('click', function (e) {
@@ -45,14 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
-	// Close mobile menu when a submenu link is clicked
 	(function closeOnSubmenuClick() {
 		if (!menu || !toggle || !mainNav) return;
 		const submenuLinks = menu.querySelectorAll('.submenu a');
 		if (!submenuLinks.length) return;
 		submenuLinks.forEach(function (link) {
 			link.addEventListener('click', function () {
-				// only close if the menu is currently open (mobile/tablet)
 				if (mainNav.classList.contains('open')) {
 					mainNav.classList.remove('open');
 					toggle.setAttribute('aria-expanded', 'false');
@@ -61,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	})();
 
-	// Prefer hover for submenu on desktop: prevent parent link navigation on non-touch large viewports
 	(function enableHoverSubmenu() {
 		const parentLinks = document.querySelectorAll('.has-submenu > a');
 		if (!parentLinks.length) return;
@@ -72,14 +63,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			link.setAttribute('aria-haspopup', 'true');
 			link.addEventListener('click', function (e) {
 				if (!isTouch() && window.innerWidth > 800) {
-					// desktop non-touch: clicking the parent should not navigate — hover will open submenu
 					e.preventDefault();
 				}
 			});
 		});
 	})();
 
-	// Preserve a non-intrusive slider if present (does not affect nav behavior)
 	const sliderImages = document.querySelectorAll('.slider-img');
 	if (sliderImages.length > 0) {
 		let current = 0;
