@@ -1,5 +1,3 @@
-/* Consolidated stylesheet (Reset → Layout/Header → Nav → Hero → Sections → Footer) */
-
 :root {
     --primary: #C04E01;
     --primary-mid: #e05a10;
@@ -14,12 +12,10 @@
     --background: #ffffff;
     --text: #222222;
 
-    /* Layout sizes */
     --container-max-width: 1100px;
     --header-min-height: 120px;
     --slider-height: 320px;
 
-    /* Spacing */
     --space-xs: 6px;
     --space-sm: 12px;
     --space: 16px;
@@ -27,15 +23,14 @@
     --space-xl: 36px;
 
     --radius: 8px;
-    --shadow: 0 1px 4px rgba(0,0,0,0.08);
+    --shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 
-    /* Breakpoints */
     --bp-mobile: 600px;
     --bp-tablet: 900px;
 }
 
-/* Reset / base */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -50,7 +45,6 @@ html, body {
     padding: 0 20px;
 }
 
-/* Header / Banner */
 .banner {
     width: 100%;
     background: linear-gradient(90deg, var(--primary) 0%, var(--primary-mid) 50%, var(--primary-dark) 100%);
@@ -60,33 +54,119 @@ html, body {
     align-items: center;
     justify-content: center;
 }
-.banner .container { padding: 16px 20px; text-align: center; }
-.site-title { margin: 0; font-size: 2.2rem; font-weight: 700; letter-spacing: 0.6px; color: var(--cream); }
 
-/* Nav / Navbar */
+.banner .container {
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: var(--cream);
+}
+
 .navbar {
     background: var(--cream);
     color: var(--muted);
-    border-bottom: 1px solid rgba(59,47,47,0.06);
-    box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+    border-bottom: 1px solid rgba(59, 47, 47, 0.06);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
     padding: 10px 20px;
 }
-.navbar .container { display: flex; align-items: center; justify-content: center; position: relative; width: 100%; }
-.navbar .container ul { display: flex; gap: 24px; margin: 0; padding: 0; align-items: center; }
 
-.main-nav { display: flex; align-items: center; gap: 12px; }
-.main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; justify-content: center; align-items: center; }
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
 
-.navbar a { color: var(--text); text-decoration: none; font-weight: 600; padding: 8px 10px; border-radius: 6px; transition: background 0.18s ease, color 0.18s ease; }
-.navbar a:hover, .navbar a:focus { color: #fff; background: var(--primary); text-decoration: none; }
-.navbar .fa-house { color: var(--text); }
+.navbar .container ul {
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
 
-.nav-toggle { display: none; background: transparent; border: 0; color: inherit; cursor: pointer; padding: 8px; }
-.hamburger { display: block; width: 22px; height: 2px; background: currentColor; position: relative; }
-.hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; width: 100%; height: 2px; background: currentColor; }
-.hamburger::before { top: -7px; } .hamburger::after { bottom: -7px; }
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-.has-submenu { position: relative; }
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: #fff;
+    background: var(--primary);
+    text-decoration: none;
+}
+
+.navbar .fa-house {
+    color: var(--text);
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    bottom: -7px;
+}
+
+.has-submenu {
+    position: relative;
+}
+
 .submenu {
     display: none;
     position: absolute;
@@ -96,22 +176,58 @@ html, body {
     background: var(--cream);
     min-width: 160px;
     max-width: 240px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
     border-radius: var(--radius);
-    padding: 0;
+    padding: 4px 0;
     z-index: 10;
     flex-direction: column;
+    gap: 2px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px) scaleY(0.98);
-    transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.28s ease;
+    transform: translateY(8px) scaleY(0.99);
+    transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
 }
-.has-submenu:hover .submenu, .has-submenu:focus-within .submenu { display:flex; opacity:1; visibility:visible; transform: translateY(0) scaleY(1); }
-.submenu li { width:100%; display:block; }
-.submenu a { display:block; padding: 8px 20px; color: var(--text); background: none; text-decoration: none; border-radius: 6px; transition: background 0.22s, color 0.22s; font-weight:600; }
-.submenu a:hover, .submenu a:focus { background: linear-gradient(90deg, var(--primary) 0%, var(--primary-mid) 100%); color: #fff; }
 
-/* Hero / Slider */
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scaleY(1);
+}
+
+.submenu li {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+.submenu a {
+    display: block;
+    padding: 3px 8px;
+    color: var(--text);
+    background: none;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.14s, color 0.14s;
+    font-weight: 600;
+    line-height: 1.05;
+    font-size: 0.95rem;
+}
+
+.submenu a:hover,
+.submenu a:focus {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-mid) 100%);
+    color: #fff;
+}
+
+.material-icons {
+    vertical-align: middle;
+    padding-top: 2px;
+    font-size: 18px;
+    margin-left: 4px;
+}
+
 .image-slider {
     width: 100vw;
     max-width: none;
@@ -125,103 +241,356 @@ html, body {
     background: var(--background);
     height: var(--slider-height);
 }
-.slider-img { width:100%; height: var(--slider-height); object-fit: cover; position:absolute; left:0; top:0; opacity:0; transition: opacity 0.7s ease; z-index:0; pointer-events:none; }
-.slider-img.active { opacity:1; z-index:1; pointer-events:auto; }
 
-/* Sections - common */
-.section-title { font-weight:700; margin:0 0 var(--space-lg) 0; color: var(--muted); }
+.slider-img {
+    width: 100%;
+    height: var(--slider-height);
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    z-index: 0;
+    pointer-events: none;
+}
 
-/* Receitas em Destaque */
-.recipes-featured { padding: 48px 20px; background: linear-gradient(180deg, rgba(248,240,227,0), rgba(248,240,227,0.02)); }
-.recipes-featured .section-title { text-align:center; font-size:2rem; }
-.recipes-grid { display:grid; grid-template-columns: repeat(4,1fr); gap:24px; max-width: var(--container-max-width); margin:0 auto; }
-.recipe-card { background:#fff; border-radius: var(--radius); box-shadow: 0 6px 18px rgba(11,9,9,0.06); overflow:hidden; display:flex; flex-direction:column; transition: transform 0.22s ease, box-shadow 0.22s ease; }
-.recipe-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(11,9,9,0.10); }
-.recipe-card .card-media img { width:100%; height:180px; object-fit:cover; display:block; }
-.card-body { padding:16px; display:flex; flex-direction:column; gap:10px; }
-.recipe-name { margin:0; font-size:1.15rem; color: var(--muted); }
-.recipe-time { margin:0; font-size:0.95rem; color: var(--muted-soft); }
-.recipe-card .btn { margin-top:auto; align-self:start; background: var(--primary); color:#fff; padding:8px 12px; border-radius:6px; text-decoration:none; font-weight:700; }
-.recipe-card .btn:hover { background: var(--primary-dark); }
+.slider-img.active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+}
 
-/* Categorias */
-.categories-section { padding: 40px 20px; background: transparent; }
-.categories-section .section-title { text-align:center; font-size:1.9rem; margin-bottom: var(--space-lg); }
-.categories-grid { max-width: var(--container-max-width); margin:0 auto; display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
-.category-card { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; background:#fff; padding:20px; border-radius: var(--radius); text-decoration:none; color: var(--muted); box-shadow: 0 8px 20px rgba(11,9,9,0.06); transition: transform 0.18s ease, box-shadow 0.18s ease; }
-.category-card:hover { transform: translateY(-6px); box-shadow: 0 14px 36px rgba(11,9,9,0.10); }
-.category-card .cat-icon { font-size: 2rem; color: var(--primary); }
-.category-card .cat-name { font-weight:700; font-size:1rem; }
+.section-title {
+    font-weight: 700;
+    margin: 0 0 var(--space-lg) 0;
+    color: var(--muted);
+}
 
+.recipes-featured {
+    padding: 48px 20px;
+    background: linear-gradient(180deg, rgba(248, 240, 227, 0), rgba(248, 240, 227, 0.02));
+}
 
+.recipes-featured .section-title {
+    text-align: center;
+    font-size: 2rem;
+}
 
-/* Media queries */
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.recipe-card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(11, 9, 9, 0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(11, 9, 9, 0.10);
+}
+
+.recipe-card .card-media img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recipe-name {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--muted);
+}
+
+.recipe-time {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--muted-soft);
+}
+
+.recipe-card .btn {
+    margin-top: auto;
+    align-self: start;
+    background: var(--primary);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.recipe-card .btn:hover {
+    background: var(--primary-dark);
+}
+
+.categories-section {
+    padding: 40px 20px;
+    background: transparent;
+}
+
+.categories-section .section-title {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: var(--space-lg);
+}
+
+.categories-grid {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--muted);
+    box-shadow: 0 8px 20px rgba(11, 9, 9, 0.06);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(11, 9, 9, 0.10);
+}
+
+.category-card .cat-icon {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.category-card .cat-name {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
 @media (max-width: 600px) {
-    .banner .container { flex-direction: column; align-items: flex-start; }
-    /* Minimal hamburger: transparent, larger hit area, no card-like background */
-    .nav-toggle { display:block; margin-bottom:12px; z-index:50; color: var(--muted); background: transparent; padding: 10px; border-radius: 4px; box-shadow: none; border: none; }
-    /* ensure navbar sits above the slider and provides positioning context */
-    .navbar { position: relative; z-index: 1000; min-height: 56px; }
-    /* keep nav container horizontal on mobile so toggle is visible and vertically centered */
-    .navbar .container { flex-direction: row; align-items:center; justify-content:space-between; position: relative; }
-    /* keep hamburger visually small and aligned vertically in the navbar */
-    /* align hamburger to the right inside the navbar without floating card visuals */
-    .nav-toggle { position: static; background: transparent; border-radius: 4px; padding: 10px; order: 2; margin-left: auto; display: flex; align-items: center; justify-content: center; }
-    .nav-toggle:focus { outline: 2px solid rgba(0,0,0,0.06); }
-    /* fine hamburger lines, centered vertically */
-    .hamburger { width: 18px; height: 2px; display:block; background: var(--muted-dark); position: relative; border-radius: 2px; }
-    .hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; width: 100%; height: 2px; background: var(--muted-dark); border-radius: 2px; }
-    .hamburger::before { top: -6px; }
-    .hamburger::after { top: 6px; }
-    /* make sure slider stays behind nav */
-    .image-slider { z-index: 0; }
-    .main-nav ul { width:100%; justify-content:flex-start; gap:12px; margin-top:10px; flex-direction:column; display:none; }
-    .main-nav.open ul { display:flex; }
-    .recipes-grid { grid-template-columns: 1fr; max-width: none; width: 100%; }
-    .recipe-card .card-media img { height:200px; }
-    .recipes-featured { padding:28px 12px; }
-    .categories-grid { grid-template-columns: 1fr; max-width: none; width: 100%; }
-    .categories-section { padding:24px 12px; }
-    .site-footer .footer-top { grid-template-columns: 1fr; }
-    .site-footer .footer-bottom { flex-direction: column; align-items:flex-start; gap:6px; }
+    .banner .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-    /* Ensure hamburger bars are visible and sizable */
-    .hamburger, .hamburger::before, .hamburger::after {
+    .nav-toggle {
+        display: block;
+        margin-bottom: 12px;
+        z-index: 50;
+        color: var(--muted);
+        background: transparent;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: none;
+        border: none;
+    }
+
+    .navbar {
+        position: relative;
+        z-index: 1000;
+        min-height: 56px;
+    }
+
+    .navbar .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .nav-toggle {
+        position: static;
+        background: transparent;
+        border-radius: 4px;
+        padding: 10px;
+        order: 2;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-toggle:focus {
+        outline: 2px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .hamburger {
+        width: 18px;
+        height: 2px;
+        display: block;
+        background: var(--muted-dark);
+        position: relative;
+        border-radius: 2px;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--muted-dark);
+        border-radius: 2px;
+    }
+
+    .hamburger::before {
+        top: -6px;
+    }
+
+    .hamburger::after {
+        top: 6px;
+    }
+
+    .image-slider {
+        z-index: 0;
+    }
+
+    .main-nav ul {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 12px;
+        margin-top: 10px;
+        flex-direction: column;
+        display: none;
+    }
+
+    .main-nav.open ul {
+        display: flex;
+    }
+
+    .recipes-grid {
+        grid-template-columns: 1fr;
+        max-width: none;
+        width: 100%;
+    }
+
+    .recipe-card .card-media img {
+        height: 200px;
+    }
+
+    .recipes-featured {
+        padding: 28px 12px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        max-width: none;
+        width: 100%;
+    }
+
+    .categories-section {
+        padding: 24px 12px;
+    }
+
+    .site-footer .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
         background: var(--muted);
     }
-    /* ensure small, consistent hamburger - keep 18px width as set above */
-    .hamburger { width: 18px; height: 2px; }
-    .hamburger::before, .hamburger::after { height: 2px; }
 
-    /* Make recipe cards consistent height on mobile and let card body stretch */
-    .recipe-card { min-height: 340px; }
-    .recipe-card .card-body { display:flex; flex-direction:column; flex:1; }
+    .hamburger {
+        width: 18px;
+        height: 2px;
+    }
 
-    /* Uniform category cards size on mobile */
-    .category-card { min-height: 120px; }
-    .category-card .cat-name { text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .hamburger::before,
+    .hamburger::after {
+        height: 2px;
+    }
+
+    .recipe-card {
+        min-height: 340px;
+    }
+
+    .recipe-card .card-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .category-card {
+        min-height: 120px;
+    }
+
+    .category-card .cat-name {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
+
 @media (max-width: 900px) {
-    .recipes-grid { grid-template-columns: repeat(2,1fr); }
-    .categories-grid { grid-template-columns: repeat(2,1fr); }
-    /* Ensure hamburger toggle is visible for tablet/mobile breakpoints up to 900px */
-    .nav-toggle { display: block !important; }
-    .hamburger, .hamburger::before, .hamburger::after { background: var(--muted) !important; }
+    .recipes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Safety: ensure mobile nav hidden unless open */
 @media (max-width: 800px) {
-    .main-nav:not(.open) ul { display: none !important; }
-    .main-nav.open ul { display: flex !important; }
+    .main-nav:not(.open) ul {
+        display: none !important;
+    }
+
+    .main-nav.open ul {
+        display: flex !important;
+    }
+
+    .site-footer .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
 }
 
-/* Footer styles */
 .site-footer {
-    background: linear-gradient(180deg, rgba(59,47,47,0.03), rgba(0,0,0,0.02));
+    background: linear-gradient(180deg, rgba(59, 47, 47, 0.03), rgba(0, 0, 0, 0.02));
     color: var(--muted);
     padding: 36px 20px;
-    border-top: 1px solid rgba(59,47,47,0.06);
+    border-top: 1px solid rgba(59, 47, 47, 0.06);
 }
+
 .site-footer .footer-top {
     max-width: 1100px;
     margin: 0 auto 18px auto;
@@ -230,26 +599,48 @@ html, body {
     gap: 24px;
     align-items: start;
 }
+
 .site-footer .footer-col .footer-title {
     margin: 0 0 8px 0;
     font-size: 1.05rem;
     color: var(--muted);
 }
+
 .site-footer .footer-desc {
     margin: 0;
     color: var(--muted-dark);
     line-height: 1.5;
 }
+
 .site-footer .links ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.site-footer .links li { margin-bottom: 8px; }
-.site-footer a { color: var(--muted); text-decoration: none; }
-.site-footer a:hover { color: var(--primary); text-decoration: underline; }
-.site-footer .social a { margin-right: 10px; color: var(--muted); font-size: 1.05rem; }
-.site-footer .social a:hover { color: var(--primary); }
+
+.site-footer .links li {
+    margin-bottom: 8px;
+}
+
+.site-footer a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.site-footer .social a {
+    margin-right: 10px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.site-footer .social a:hover {
+    color: var(--primary);
+}
 
 .site-footer .footer-bottom {
     max-width: 1100px;
@@ -258,30 +649,45 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding-top: 12px;
-    border-top: 1px dashed rgba(59,47,47,0.04);
+    border-top: 1px dashed rgba(59, 47, 47, 0.04);
     gap: 12px;
 }
-.site-footer .copyright { color: var(--muted-soft); font-size: 0.95rem; }
-.site-footer .footer-datetime { color: var(--muted-soft); font-size: 0.95rem; }
 
-@media (max-width: 800px) {
-    .site-footer .footer-top { grid-template-columns: 1fr; }
-    .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+.site-footer .copyright {
+    color: var(--muted-soft);
+    font-size: 0.95rem;
 }
 
-/* Extra authoritative fix for mid-tablet widths (700px - 900px)
-   Ensures the hamburger toggle is visible and positioned to the right. */
-@media (min-width: 700px) and (max-width: 900px) {
-    .navbar .container { justify-content: space-between !important; }
-    .nav-toggle { display: block !important; order: 2 !important; margin-left: auto !important; z-index: 2200 !important; visibility: visible !important; opacity: 1 !important; }
-    .hamburger, .hamburger::before, .hamburger::after { background: var(--muted) !important; }
+.site-footer .footer-datetime {
+    color: var(--muted-soft);
+    font-size: 0.95rem;
 }
 
-/* Very-high-specificity safety block: force hamburger visible, positioned and on top
-   If the button still doesn't appear at ~798px, this will ensure it's visible and clickable. */
 @media (min-width: 700px) and (max-width: 900px) {
-    nav.main-nav.navbar { position: relative !important; }
-    nav.main-nav.navbar > .container > .nav-toggle {
+    .navbar .container {
+        justify-content: space-between !important;
+    }
+
+    .nav-toggle {
+        display: block !important;
+        order: 2 !important;
+        margin-left: auto !important;
+        z-index: 2200 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        background: var(--muted) !important;
+    }
+
+    nav.main-nav.navbar {
+        position: relative !important;
+    }
+
+    nav.main-nav.navbar>.container>.nav-toggle {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -298,23 +704,30 @@ html, body {
         background: transparent !important;
         border: none !important;
     }
-    /* Ensure the hamburger bars are visible against the header background */
-    nav.main-nav.navbar > .container > .nav-toggle .hamburger,
-    nav.main-nav.navbar > .container > .nav-toggle .hamburger::before,
-    nav.main-nav.navbar > .container > .nav-toggle .hamburger::after {
+
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger,
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger::before,
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger::after {
         background: var(--muted) !important;
     }
 }
 
-/* Force hamburger visible & usable between 300px and 900px
-   This covers the user's requested range (900px down to 300px) and
-   ensures the menu stays hidden unless opened. */
 @media (min-width: 300px) and (max-width: 900px) {
-    nav.main-nav.navbar { position: relative !important; }
-    /* Make navbar height and alignment consistent with mobile (<=600px) */
-    nav.main-nav.navbar { min-height: 56px !important; padding: 10px 12px !important; }
-    nav.main-nav.navbar .container { align-items: center !important; justify-content: space-between !important; }
-    nav.main-nav.navbar > .container > .nav-toggle {
+    nav.main-nav.navbar {
+        position: relative !important;
+    }
+
+    nav.main-nav.navbar {
+        min-height: 56px !important;
+        padding: 10px 12px !important;
+    }
+
+    nav.main-nav.navbar .container {
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    nav.main-nav.navbar>.container>.nav-toggle {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -332,18 +745,201 @@ html, body {
         border: none !important;
     }
 
-    /* Hide the primary menu list unless .open is present */
-    nav.main-nav.navbar > .container > ul { display: none !important; }
-    .main-nav.open > .container > ul,
-    nav.main-nav.open > .container > ul,
-    .main-nav.open ul { display: flex !important; flex-direction: column !important; width: 100% !important; }
+    nav.main-nav.navbar>.container>ul {
+        display: none !important;
+    }
 
-    /* Make sure hamburger bars are visible */
-    nav.main-nav.navbar > .container > .nav-toggle .hamburger,
-    nav.main-nav.navbar > .container > .nav-toggle .hamburger::before,
-    nav.main-nav.navbar > .container > .nav-toggle .hamburger::after {
+    .main-nav.open>.container>ul,
+    nav.main-nav.open>.container>ul,
+    .main-nav.open ul {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger,
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger::before,
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger::after {
         background: var(--muted) !important;
     }
 }
 
+.site-footer {
+    background: linear-gradient(180deg, rgba(59, 47, 47, 0.03), rgba(0, 0, 0, 0.02));
+    color: var(--muted);
+    padding: 36px 20px;
+    border-top: 1px solid rgba(59, 47, 47, 0.06);
+}
 
+.site-footer .footer-top {
+    max-width: 1100px;
+    margin: 0 auto 18px auto;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.site-footer .footer-col .footer-title {
+    margin: 0 0 8px 0;
+    font-size: 1.05rem;
+    color: var(--muted);
+}
+
+.site-footer .footer-desc {
+    margin: 0;
+    color: var(--muted-dark);
+    line-height: 1.5;
+}
+
+.site-footer .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-footer .links li {
+    margin-bottom: 8px;
+}
+
+.site-footer a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.site-footer .social a {
+    margin-right: 10px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.site-footer .social a:hover {
+    color: var(--primary);
+}
+
+.site-footer .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(59, 47, 47, 0.04);
+    gap: 12px;
+}
+
+.site-footer .copyright {
+    color: var(--muted-soft);
+    font-size: 0.95rem;
+}
+
+.site-footer .footer-datetime {
+    color: var(--muted-soft);
+    font-size: 0.95rem;
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+    .navbar .container {
+        justify-content: space-between !important;
+    }
+
+    .nav-toggle {
+        display: block !important;
+        order: 2 !important;
+        margin-left: auto !important;
+        z-index: 2200 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        background: var(--muted) !important;
+    }
+
+    nav.main-nav.navbar {
+        position: relative !important;
+    }
+
+    nav.main-nav.navbar>.container>.nav-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        right: 16px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 44px !important;
+        height: 44px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger,
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger::before,
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger::after {
+        background: var(--muted) !important;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+    nav.main-nav.navbar {
+        position: relative !important;
+    }
+
+    nav.main-nav.navbar {
+        min-height: 56px !important;
+        padding: 10px 12px !important;
+    }
+
+    nav.main-nav.navbar .container {
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    nav.main-nav.navbar>.container>.nav-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        right: 12px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 44px !important;
+        height: 44px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    nav.main-nav.navbar>.container>ul {
+        display: none !important;
+    }
+
+    .main-nav.open>.container>ul,
+    nav.main-nav.open>.container>ul,
+    .main-nav.open ul {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger,
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger::before,
+    nav.main-nav.navbar>.container>.nav-toggle .hamburger::after {
+        background: var(--muted) !important;
+    }
+}
