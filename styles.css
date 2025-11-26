@@ -39,6 +39,16 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+hr
+{
+    position: relative;
+    border: none;
+    height: 5px;
+    background: var(--primary-mid);
+    width: 90%;
+    border-radius: 5px 
+}
+
 .container {
     max-width: var(--container-max-width);
     margin: 0 auto;
@@ -100,7 +110,7 @@ body {
 
 .navbar .container ul {
     display: flex;
-    gap: 24px;
+    /* gap: 24px; */
     margin: 0;
     padding: 0;
     align-items: center;
@@ -117,7 +127,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 24px;
+    /* gap: 24px; */
     justify-content: center;
     align-items: center;
 }
