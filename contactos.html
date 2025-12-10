@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <!-- React e ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 </head>
 
 <body>
@@ -19,28 +23,44 @@
             </div>
         </div>
     </header>
+
+
+
+
     <nav class="main-nav navbar" aria-label="Main Navigation">
-            <div class="container">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menu">
-                    <span class="hamburger" aria-hidden="true"></span>
-                </button>
-                <ul id="primary-menu">
-                    <li class="home"><a href="index.html" aria-label="Página inicial"><i class="fa-solid fa-house" aria-hidden="true"></i></a></li>
-                    <li><a href="quemsomos.html">Quem Somos</a></li>
-                    <li><a href="contactos.html">Contactos</a></li>
-                    <li class="has-submenu">
-                        <a tabindex="0">Receitas<i class="material-icons" aria-hidden="true">arrow_drop_down</i></a>
-                        <ul class="submenu" aria-label="Submenu Receitas">
-                            <li><a href="receitas.html#doces">Doces</a></li>
-                            <hr>
-                            <li><a href="receitas.html#salgados">Salgados</a></li>
-                            <hr>
-                            <li><a href="receitas.html#saudaveis">Saudáveis</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class="container">
+            <!-- Menu "hamburger" quando o ecrã é demasiado pequeno -->
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menu">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+            <ul id="primary-menu">
+                <li class="home"><a href="index.html" aria-label="Página inicial"><i class="fa-solid fa-house" aria-hidden="true"></i></a></li>
+                <li><a href="quemsomos.html">Quem Somos</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+                <li class="has-submenu">
+                    <a tabindex="0">Receitas<i class="material-icons" aria-hidden="true">arrow_drop_down</i></a>
+                    <ul class="submenu" aria-label="Submenu Receitas">
+                        <li><a href="receitas.html#doces">Doces</a></li>
+                        <hr class="linhaLaranja">
+                        <li><a href="receitas.html#salgados">Salgados</a></li>
+                        <hr class="linhaLaranja">
+                        <li><a href="receitas.html#saudaveis">Saudáveis</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>      
+    </nav>
+
+
+    <!-- Conteudo aqui -->
+    <section id="conteudo" class="">
+
+
+
+    </section>
+
+
+
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-col about">
@@ -72,5 +92,6 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="react.js"></script>
 </body>
 </html>
