@@ -137,7 +137,7 @@ function submissao(event)
 function formulario(props){
 
     return React.createElement("form", {onSubmit: submissao},
-        React.createElement("h3",{class: "tituloContactos"},"Contacte-nos"),
+        React.createElement("h2",{class: "tituloContactos"},"Contacte-nos"),
 
         React.createElement("div",{class:"divInput"},
             React.createElement("label",{class:"labelInput"},"Nome: "),
