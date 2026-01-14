@@ -46,6 +46,11 @@
   color: #888;
 }
 
+/* Insere automaticamente o emoji de tempo antes do valor */
+.tempo::before {
+  content: "⏱️ ";
+}
+
 h1
 {
     margin-bottom: 0px;
