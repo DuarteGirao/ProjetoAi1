@@ -1,0 +1,151 @@
+.receita-detalhe {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .receita-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .receita-header h1 {
+            font-size: 2.5rem;
+            color: #e77338;
+            margin-bottom: 10px;
+        }
+
+        .receita-header .tempo-detalhe {
+            display: inline-block;
+            background-color: #e77338;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .receita-imagem-principal {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .receita-descricao {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .receita-secao {
+            margin-bottom: 40px;
+        }
+
+        .receita-secao h2 {
+            color: #e77338;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #e77338;
+            padding-bottom: 10px;
+        }
+
+        .ingredientes-lista {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ingredientes-lista li {
+            padding: 12px;
+            margin-bottom: 8px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #e77338;
+            font-size: 1.1rem;
+        }
+
+        .passos-lista {
+            list-style: none;
+            counter-reset: step-counter;
+            padding: 0;
+        }
+
+        .passos-lista li {
+            counter-increment: step-counter;
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 70px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .passos-lista li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #e77338;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .btn-voltar {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 24px;
+            background-color: #e77338;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background-color: #d56329;
+        }
+
+        .receita-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item i {
+            font-size: 2rem;
+            color: #e77338;
+            margin-bottom: 10px;
+        }
+
+        .info-item strong {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 1.5rem;
+            color: #e77338;
+        }
