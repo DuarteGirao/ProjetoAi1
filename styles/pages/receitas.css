@@ -65,3 +65,30 @@ h1
     margin-bottom: 0px;
     margin-left: 50px;
 }
+
+@media (max-width: 600px) {
+    .receitas {
+        gap: 0.5rem;
+        padding: 0 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .receita-card {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .receita-card img {
+        height: 180px;
+    }
+
+    .receita-texto {
+        padding: 0.75rem 1rem;
+    }
+
+    h1 {
+        margin-left: 20px;
+        font-size: 1.5rem;
+    }
+}
