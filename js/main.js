@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
         parentLinks.forEach(function (link) {
             link.setAttribute('aria-haspopup', 'true');
             link.addEventListener('click', function (e) {
-                if (!isTouch() && window.innerWidth > 800) {
-                    e.preventDefault();
-                }
+                // if (!isTouch() && window.innerWidth > 800) {
+                //     e.preventDefault();
+                // }
             });
         });
     })();
