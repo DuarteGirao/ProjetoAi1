@@ -1,7 +1,7 @@
 const receitasDB = {
     'CaldoVerde': {
         nome: 'Caldo Verde',
-        imagem: 'img/recipe1.jpg',
+        imagem: 'img/caldoVerde.jpg',
         descricao: 'Sopa tradicional portuguesa com couve galega, batata e chouriço. Reconfortante e saborosa.',
         tempo: '35 min',
         dificuldade: 'Fácil',
@@ -29,7 +29,7 @@ const receitasDB = {
     },
     'SopaLegumes': {
         nome: 'Sopa de Legumes',
-        imagem: 'img/recipe2.jpg',
+        imagem: 'img/sopaLegumes.jpg',
         descricao: 'Sopa nutritiva e colorida com uma variedade de legumes frescos. Perfeita para qualquer época do ano.',
         tempo: '40 min',
         dificuldade: 'Fácil',
@@ -59,7 +59,7 @@ const receitasDB = {
     },
     'BifeGrelhadoBatatas': {
         nome: 'Bife Grelhado com Batatas',
-        imagem: 'img/recipe3.jpg',
+        imagem: 'img/bifeBatatas.jpg',
         descricao: 'Bife suculento grelhado acompanhado de batatas fritas crocantes. Um clássico português.',
         tempo: '30 min',
         dificuldade: 'Fácil',
@@ -86,7 +86,7 @@ const receitasDB = {
     },
     'FrangoAssado': {
         nome: 'Frango Assado no Forno',
-        imagem: 'img/recipe4.jpg',
+        imagem: 'img/frango.jpg',
         descricao: 'Frango inteiro assado com batatas, alho e ervas aromáticas. Perfeito para refeições em família.',
         tempo: '90 min',
         dificuldade: 'Média',
@@ -232,7 +232,7 @@ const receitasDB = {
     },
     'BacalhauBras': {
         nome: 'Bacalhau à Brás',
-        imagem: 'img/recipe1.jpg',
+        imagem: 'img/bacalhau.jpg',
         descricao: 'Prato tradicional português com bacalhau desfiado, batata palha e ovos. Um dos clássicos mais amados.',
         tempo: '45 min',
         dificuldade: 'Média',
@@ -261,7 +261,7 @@ const receitasDB = {
     },
     'CurryGraoVegetais': {
         nome: 'Curry de Grão com Vegetais',
-        imagem: 'img/recipe2.jpg',
+        imagem: 'img/curry.jpg',
         descricao: 'Curry aromático vegan com grão-de-bico, legumes e especiarias. Saudável, nutritivo e cheio de sabor.',
         tempo: '35 min',
         dificuldade: 'Fácil',
@@ -291,7 +291,7 @@ const receitasDB = {
     },
     'BowlBuddha': {
         nome: 'Bowl Buddha Vegan',
-        imagem: 'img/recipe3.jpg',
+        imagem: 'img/buddah.jpg',
         descricao: 'Bowl nutritivo e colorido com quinoa, vegetais assados, hummus e sementes. Completo e equilibrado.',
         tempo: '40 min',
         dificuldade: 'Fácil',
@@ -320,7 +320,7 @@ const receitasDB = {
     },
     'WrapFrango': {
         nome: 'Wrap de Frango e Vegetais',
-        imagem: 'img/recipe4.jpg',
+        imagem: 'img/wrap.jpg',
         descricao: 'Wrap rápido e saboroso com frango grelhado, vegetais frescos e molho de iogurte. Pronto em minutos.',
         tempo: '15 min',
         dificuldade: 'Fácil',

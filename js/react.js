@@ -16,7 +16,7 @@ function validarDados(nome, email, telefone, motivo, texto)
     if(nome.length < 2 || nome.length > 50)
     {
         console.warn("Erro no nome!");
-        output += "Nome inválido! (<2 ou >50)\n";
+        output += "Nome inválido!\n";
     }
 
     //---------Validações email
@@ -72,7 +72,7 @@ function validarDados(nome, email, telefone, motivo, texto)
             if(telefone[i] < '0' || telefone[i] > '9')
             {
                 console.warn("Erro no telefone!");
-                output += "Digito inválido no telefone ["+telefone[i]+"]";
+                output += "Digito inválido no telefone ["+telefone[i]+"]\n";
             }
         }
     }
