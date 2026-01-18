@@ -230,7 +230,8 @@ else
     console.error(output)
     form = formulario_vazio();
 
-    //não é necessário, mas apaga-se a base de dados caso exista algum dado errado, porque os dados não vão ser introduzidos de qualquer maneira
+    //não é necessário, mas apaga-se a base de dados caso exista algum dado errado, 
+    // porque os dados não vão ser introduzidos de qualquer maneira
     localStorage.clear();
     console.warn("Local storage limpa!")
 }
